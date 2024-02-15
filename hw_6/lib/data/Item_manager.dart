@@ -1,3 +1,4 @@
+import 'package:get_it/get_it.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hw_6/model/user_model.dart';
 
@@ -26,7 +27,7 @@ class ItemManager {
     saveItems();
   }
 
-  void removeItem(UserModel item) {
+  void removeItem() {
     box.erase();
     items.clear();
     saveItems();

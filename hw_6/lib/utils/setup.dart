@@ -8,5 +8,4 @@ Future<void> setup() async {
   
   GetIt.instance;
   GetIt.I.registerSingleton<ItemManager>(ItemManager());
-  GetIt.I.registerSingleton<UserModel>(UserModel());
 }

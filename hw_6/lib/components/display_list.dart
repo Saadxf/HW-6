@@ -23,10 +23,10 @@ class _DisplayListState extends State<DisplayList> {
           : ListView.builder(
               itemCount: GetIt.I.get<ItemManager>().items.length,
               itemBuilder: (context, index) {
-                final item = GetIt.I.get<ItemManager>().items[index];
+                GetIt.I.get<ItemManager>().items[index];
                 return ItemContainer(
-                  name: item.name ?? '',
-                  email: item.email ?? '',
+                  name: GetIt.I.get<ItemManager>().items[index].name ?? '',
+                  email: GetIt.I.get<ItemManager>().items[index].email ?? '',
                 );
               },
             ),

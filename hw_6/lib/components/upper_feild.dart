@@ -17,6 +17,7 @@ class _UpperFieldState extends State<UpperField> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -44,9 +45,7 @@ class _UpperFieldState extends State<UpperField> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
               onPressed: () {
-                GetIt.I.get<UserModel>().name = nameController.text;
-                GetIt.I.get<UserModel>().email = emailController.text;
-                GetIt.I.get<ItemManager>().addItem( GetIt.I.get<UserModel>());
+                GetIt.I.get<ItemManager>().addItem(UserModel(name: nameController.text, email:emailController.text));
 
                 if (widget.onUpdate != null) {
                   widget.onUpdate!(); 
@@ -60,7 +59,7 @@ class _UpperFieldState extends State<UpperField> {
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
               onPressed: () {
-                GetIt.instance.get<ItemManager>().removeItem( GetIt.I.get<UserModel>());
+                GetIt.I.get<ItemManager>().removeItem();
                 if (widget.onUpdate != null) {
                   widget.onUpdate!(); 
                 }

@@ -6,7 +6,7 @@ class ItemContainer extends StatelessWidget {
   });
   final String name;
   final String email;
-
+  
   @override
   Widget build(BuildContext context) {
     return SizedBox(
